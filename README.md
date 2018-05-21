@@ -5,6 +5,8 @@ This project aims to wrap the Twitter Emoji (https://github.com/twitter/twemoji)
 
 Basic Usage
 -----------
+```java
 Twemoji twemoji = new Twemoji();
 twemoji.init(); // init the wrapper
 String stringWithReplacedEmojis = twemoji.parse(strinWithUnicodes);
+```
