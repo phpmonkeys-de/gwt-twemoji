@@ -8,6 +8,6 @@ public interface TwemojiClientBundle extends ClientBundle {
 
     TwemojiClientBundle INSTANCE = GWT.create(TwemojiClientBundle.class);
 
-    @Source("resources/twemoji.min.js")
+    @Source("resources/twemoji/twemoji.js")
     TextResource twemojiJs();
 }

@@ -39,7 +39,7 @@
 				<directory>src/main/resources</directory>
 				<includes>
 					<include>**/72x72/*</include>
-					<include>**/*.js</include>
+					<include>**/twemoji.js</include>
 				</includes>
 			</resource>
 		</resources>
