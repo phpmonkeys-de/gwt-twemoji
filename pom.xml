@@ -43,5 +43,31 @@
 				</includes>
 			</resource>
 		</resources>
+		<plugins>
+			<plugin>
+				<groupId>com.mycila</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<version>2.11</version>
+				<configuration>
+					<header>LICENSE</header>
+					<excludes>
+						<exclude>src/main/resources/**</exclude>
+						<exclude>**/*.xml</exclude>
+						<exclude>**/README.md</exclude>
+						<exclude>**/CHANGELOG</exclude>
+						<exclude>target/**</exclude>
+						<exclude>LICENSE**</exclude>
+						<exclude>build/**</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>
