@@ -380,7 +380,7 @@ wru.test([{
       )
     );
   }
-},{    
+},{
   name: 'DOM parsing + attributes callback',
   test: function () {
     var img,
@@ -388,18 +388,18 @@ wru.test([{
         div = document.createElement('div');
     div.appendChild(document.createTextNode('I \u2764 emoji!'));
     twemoji.parse(
-      div, { 
+      div, {
         attributes: function(rawText, iconId) {
-          return { 
+          return {
             title: 'Emoji: ' + rawText,
             'data-test': 'We all <3 emoji',
             onclick: 'nope',
             onmousedown: 'nada'
-          }; 
+          };
         }
       }
-     
-    );    
+
+    );
     wru.assert('default parsing works creating 3 nodes', div.childNodes.length === 3);
     wru.assert('first child is the expected one', div.removeChild(div.firstChild).nodeValue === 'I ');
     img = div.removeChild(div.firstChild);
@@ -416,7 +416,7 @@ wru.test([{
     wru.assert('img on attributes are omitted',
       img.onclick === null &&
       img.onmousedown === null
-    );  
+    );
   }
 },{
   name: 'folder option',
@@ -534,7 +534,35 @@ wru.test([{
       div.firstChild.src === 'https://twemoji.maxcdn.com/2/72x72/2639.png'
     );
   }
-}, {
+},{
+  name: 'lone vs16s',
+  test: function () {
+    wru.assert('are not parsed in strings',
+     twemoji.parse('\ufe0f') === '\ufe0f'
+    );
+
+    var div = document.createElement('div');
+    div.innerHTML = '\ufe0f';
+    twemoji.parse(div);
+    wru.assert('are not parsed in nodes',
+      div.innerHTML === '\ufe0f'
+    );
+  }
+},{
+  name: 'unnecessary vs16s',
+  test: function () {
+    wru.assert('are not parsed in strings',
+     twemoji.parse('\ud83d\ude10\ufe0f') === '<img class="emoji" draggable="false" alt="\ud83d\ude10" src="https://twemoji.maxcdn.com/2/72x72/1f610.png"/>\ufe0f'
+    );
+
+    var div = document.createElement('div');
+    div.innerHTML = '\ud83d\ude10\ufe0f';
+    twemoji.parse(div);
+    wru.assert('are not parsed in nodes',
+      div.children.length === 1 && div.innerText === '\ufe0f'
+    );
+  }
+},{
   name: 'multiple parsing using a callback',
   test: function () {
     wru.assert(
@@ -738,7 +766,7 @@ wru.test([{
       '\ud83d\udc50',
       '\ud83d\udcaa',
       '\ud83d\ude4f',
-      '\u261d',        
+      '\u261d',
       '\ud83d\udc46',
       '\ud83d\udc47',
       '\ud83d\udc48',
@@ -1011,7 +1039,7 @@ wru.test([{
       '\ud83c\udf6f',
       '\ud83c\udf5e',
       '\ud83e\uddc0',
-      '\ud83c\udf57', 
+      '\ud83c\udf57',
       '\ud83c\udf56',
       '\ud83c\udf64',
       '\ud83c\udf73',
@@ -1036,7 +1064,7 @@ wru.test([{
       '\ud83c\udf67',
       '\ud83c\udf68',
       '\ud83c\udf66',
-      '\ud83c\udf70', 
+      '\ud83c\udf70',
       '\ud83c\udf82',
       '\ud83c\udf6e',
       '\ud83c\udf6c',
@@ -1061,7 +1089,7 @@ wru.test([{
       '\ud83c\udfc0',
       '\ud83c\udfc8',
       '\u26be\ufe0f',
-      '\ud83c\udfbe', 
+      '\ud83c\udfbe',
       '\ud83c\udfd0',
       '\ud83c\udfc9',
       '\ud83c\udfb1',
@@ -1086,7 +1114,7 @@ wru.test([{
       '\ud83c\udfcb',
       '\ud83d\udeb4',
       '\ud83d\udeb5',
-      '\ud83c\udfc7\ud83c\udffb', 
+      '\ud83c\udfc7\ud83c\udffb',
       '\ud83d\udd74',
       '\ud83c\udfc6',
       '\ud83c\udfbd',
@@ -1111,7 +1139,7 @@ wru.test([{
       '\ud83c\udfae',
       '\ud83d\udc7e',
       '\ud83c\udfaf',
-      '\ud83c\udfb2', 
+      '\ud83c\udfb2',
       '\ud83c\udfb0',
       '\ud83c\udfb3',
       '\ud83d\ude92',
@@ -1136,7 +1164,7 @@ wru.test([{
       '\ud83d\ude98',
       '\ud83d\ude96',
       '\ud83d\udea1',
-      '\ud83d\udea0', 
+      '\ud83d\udea0',
       '\ud83d\ude9f',
       '\ud83d\ude83',
       '\ud83d\ude8b',
@@ -1161,7 +1189,7 @@ wru.test([{
       '\u26f4',
       '\ud83d\udef3',
       '\ud83d\ude80',
-      '\ud83d\udef0', 
+      '\ud83d\udef0',
       '\ud83d\udcba',
       '\u2693\ufe0f',
       '\ud83d\udea7',
@@ -1211,7 +1239,7 @@ wru.test([{
       '\ud83c\udfdf',
       '\ud83d\uddfd',
       '\ud83c\udfe0',
-      '\ud83c\udfe1', 
+      '\ud83c\udfe1',
       '\ud83c\udfda',
       '\ud83c\udfe2',
       '\ud83c\udfec',
@@ -1237,7 +1265,7 @@ wru.test([{
       '\u2328',
       '\ud83d\udda5',
       '\ud83d\udda8',
-      '\ud83d\uddb1', 
+      '\ud83d\uddb1',
       '\ud83d\uddb2',
       '\ud83d\udd79',
       '\ud83d\udddc',
@@ -1263,7 +1291,7 @@ wru.test([{
       '\ud83c\udf9b',
       '\u23f1',
       '\u23f2',
-      '\u23f0', 
+      '\u23f0',
       '\ud83d\udd70',
       '\u23f3',
       '\u231b\ufe0f',
@@ -1290,7 +1318,7 @@ wru.test([{
       '\ud83d\udee0',
       '\u26cf',
       '\ud83d\udd29',
-      '\u2699', 
+      '\u2699',
       '\u26d3',
       '\ud83d\udd2b',
       '\ud83d\udca3',
@@ -1604,9 +1632,9 @@ wru.test([{
       '\u2716\ufe0f',
       '\ud83d\udcb2',
       '\ud83d\udcb1',
-      '\xa9',
-      '\xae',
-      '\u2122',
+      '\xa9\ufe0f',
+      '\xae\ufe0f',
+      '\u2122\ufe0f',
       '\ud83d\udd1a',
       '\ud83d\udd19',
       '\ud83d\udd1b',
@@ -1917,7 +1945,7 @@ wru.test([{
     allIosEmoji.forEach(function (emoji) {
       div.innerHTML = emoji;
       twemoji.parse(div);
-      wru.assert('recognized as graphical',
+      wru.assert('' + emoji + 'recognized as graphical',
           div.firstChild.className === 'emoji' &&
           div.firstChild.getAttribute('draggable') === 'false' &&
           div.firstChild.getAttribute('alt') === emoji
