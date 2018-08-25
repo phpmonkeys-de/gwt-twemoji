@@ -14,6 +14,33 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:ssh://github.com/phpmonkeys-de/gwt-twemoji.git</connection>
+		<url>http://github.com/phpmonkeys-de/gwt-twemoji</url>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>nbartels</id>
+			<name>Norbert Bartels</name>
+			<email>n.bartels@phpmonkeys.de</email>
+			<url>http://www.phpmonkeys.de</url>
+			<roles>
+				<role>Project Lead</role>
+				<role>Developer</role>
+			</roles>
+			<timezone>Europe/Berlin</timezone>
+		</developer>
+	</developers>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.google.gwt</groupId>
