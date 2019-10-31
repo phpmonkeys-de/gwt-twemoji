@@ -25,7 +25,7 @@
       vertical-align: -0.1em;
     }
     </style>
-    <script src="https://twemoji.maxcdn.com/2/twemoji.min.js?12.0.4" crossorigin="anonymous"></script>
+    <script src="https://twemoji.maxcdn.com/v/12.1.3/twemoji.min.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <ul class="emoji-list">
@@ -680,6 +680,7 @@
       <li>&#x1F3EF;</li>
       <li>&#x1F3F0;</li>
       <li>&#x1F3F3;&#xFE0F;&#x200D;&#x1F308;</li>
+      <li>&#x1F3F3;&#xFE0F;&#x200D;&#x26A7;&#xFE0F;</li>
       <li>&#x1F3F3;&#xFE0F;</li>
       <li>&#x1F3F4;&#x200D;&#x2620;&#xFE0F;</li>
       <li>&#x1F3F4;&#xE0067;&#xE0062;&#xE0065;&#xE006E;&#xE0067;&#xE007F;</li>
@@ -3109,7 +3110,7 @@
     var ul = document.getElementsByTagName('ul')[0];
     var total = ul.getElementsByTagName('li').length;
     var elapsed = +new Date;
-    twemoji.parse(ul, {"folder":"../svg","ext":".svg","base":""});
+    twemoji.parse(ul, {"folder":"svg","ext":".svg","base":""});
     elapsed = (+new Date) - elapsed;
     document.body.insertBefore(
       document.createTextNode(total + ' emoji parsed in ' + elapsed + 'ms'),
