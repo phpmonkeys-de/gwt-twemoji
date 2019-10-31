@@ -4,7 +4,7 @@
 	<groupId>de.phpmonkeys</groupId>
 	<artifactId>gwt-twemoji</artifactId>
 	<packaging>jar</packaging>
-	<version>1.8-SNAPSHOT</version>
+	<version>1.8</version>
 	<name>GWT-Twemoji</name>
 	<description>A simple gwt wraper for the twemoji js library.</description>
 	<url>https://github.com/phpmonkeys-de/gwt-twemoji</url>
@@ -38,7 +38,7 @@
 	<scm>
 		<connection>scm:git:ssh://github.com/phpmonkeys-de/gwt-twemoji.git</connection>
 		<url>http://github.com/phpmonkeys-de/gwt-twemoji</url>
-	  <tag>HEAD</tag>
+	  <tag>1.8</tag>
   </scm>
 
 	<developers>
